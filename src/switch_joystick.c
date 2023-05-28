@@ -140,6 +140,9 @@ void _glfwUpdateSwitchJoysticks(void)
         _glfwInputWindowCloseRequest(_glfw.nx.cur_window);
         return;
     }
+    
+    // Eh whatever we'll do this here. GLFW should know that the mouse has "entered" the "window".
+    _glfwInputCursorEnter(_glfw.nx.cur_window, true);
 
 #define MAP_KEY(_libnx_key, _glfw_key, _scancode) \
     do { \
